@@ -15,6 +15,7 @@ footer .container {
   align-items: center;
   justify-content: space-between;  
   min-height: 360px;
+  gap: 22px;
 }
 
 .social-list {
