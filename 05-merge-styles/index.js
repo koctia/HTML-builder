@@ -8,7 +8,6 @@ const dirBundle = path.join(__dirname, 'project-dist');
 const dirStyle = path.join(__dirname, 'styles');
 const bundle = path.join(dirBundle, 'bundle.css');
 const writeFile = fs.createWriteStream(bundle);
-const dataFile = [];
 
 fs.readdir(dirStyle, (err, items) => {
    if (err) throw err;
@@ -22,7 +21,6 @@ fs.readdir(dirStyle, (err, items) => {
                const stream = fs.createReadStream(file);
                stream.on('data', data => {
                   writeFile.write(data.toString());
-                  dataFile.push(data.toString());
                });
             }
          }
