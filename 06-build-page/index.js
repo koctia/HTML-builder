@@ -75,7 +75,7 @@ function createdIndex(dir,template,index) {
          items.forEach(file => {
             const source = fs.createReadStream(path.join(dir, file));
             source.on('data', (foleSource) => {
-               html = html.replace(`{{${file.split('.').shift()}}}`, foleSource.toString());
+               html = html.replaceAll(`{{${file.split('.').shift()}}}`, foleSource.toString());
                fs.createWriteStream(index).write(html);
             });
          });
